@@ -27,19 +27,23 @@ module.exports = function(app) {
         res.render("signup");
     })
 
-    app.get("/foster_home/:id", function (req, res) {
+    app.get("/authors/:id", function (req, res) {
         db.fosterHome.findAll({
             where: {
                 id: req.params.id
             }
         }).then(function(dbPets) {
-            res.render("index", {result:dbPets});
+            res.render("foster_home_edit", {result:dbPets});
         });
     });
 
+    //signup for foster home
+    app.post("/authors", function (req,res) {
+        
+    })
 
     //add new foster home information
-    app.post("/add_foster_home", function (req, res) {
+    app.post("/authors", function (req, res) {
         db.Foster.Create({
             fosterHome: req.body.fosterHome,
             fosterParents: req.body.fosterParents,
@@ -52,7 +56,7 @@ module.exports = function(app) {
             image: req.body.image,
             active: true
         }).then(function(dbFoster) {
-            res.redirect("/admin");
+            res.redirect("/foster_home_edit");
         }).catch(function (error) {
             console.log(error.message);
             res.status(500).json({error: error.message});
