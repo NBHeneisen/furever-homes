@@ -1,17 +1,15 @@
 //requirements
 var express = require("express");
 var db = require("../models");
+var router = express.Router();
+var bcrypt = require("bcrypt");
 
 //controller for foster homes
 module.exports = function(app) {
 
-<<<<<<< HEAD
     //display foster home information on foster home page
 
     app.get("/login", function(req, res) {
-=======
-    app.get("/login", function (req, res) {
->>>>>>> 9da5e215c4d5fe36480bc247949443bec5a2e7b9
         res.render("login");
     })
 
@@ -31,8 +29,13 @@ module.exports = function(app) {
 
 
     //add new foster home information
-    app.post("/add_foster_home", function(req, res) {
+    app.post("/add_foster_home", function (req, res) {
+        var saltRounds = 10;
+        var hash = bcrypt.hashSync(req.body.password, saltRounds);
+        console.log(hash);
         db.Foster.Create({
+            username: req.body.username,
+            password: hash,
             fosterHome: req.body.fosterHome,
             fosterParents: req.body.fosterParents,
             address: req.body.address,
@@ -53,3 +56,29 @@ module.exports = function(app) {
 
 
 };
+
+app.post("/signin", function(req, res){
+    db.Foster.findOne({
+        username: req.body.username
+    })
+    .then(function(foster){
+        if (!foster) {
+            console.log("User not found");
+            res.status(400).json({
+                'status' : 'Invalid Username or Password'
+            })
+        }else {
+            bcrypt.compare(req.body.password, foster.password, function(err, res){
+                if (err || !valid) {
+                    res.status(400).json({
+                          'status' : 'Invalid Username or Password'
+                    });
+                })
+            });
+            res.status(200).json({
+                id: foster.id,
+                username: foster.username
+            });
+        }
+    });
+});
