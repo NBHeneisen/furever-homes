@@ -1,116 +1,67 @@
-{{!-- contact page --}}
- <link rel="stylesheet" href="/assets/css/foster_home_details.css">
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- Custom Script -->
+    <script src="assets/js/foster_home_details.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" media="screen" title="no title">
 
-  <!-- Navigation -->
-<div>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <h1>FUR-EVER HOMES</h1>
-                </div>
-            <div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="login">
-                         <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </li>
-                    <li>
-                        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    </li>
-                    <li>
-                        <a href="/admin"><span class="glyphicon glyphicon-pencil"></span> Edit Foster Home Page</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-</div>  
-<br>   
-            
-    <div class="container ">
-       <div class="col-md-12 jumbotron-fluid">
-            <h2 id="voice"><strong>Fur-Ever Homes provides a voice for animals who need a second chance!</strong></h2>
-            <br>
-            <h4>Our mission is to re-home animals into loving homes, where they can live the rest of their lives in a safe, caring environment. We give them shelter and the promise of a home, as they reclaim the lives that have been stolen from them. </h4>
-
-            <h4>It is our privilege to witness the peaceful demeanor that settles over them, illustrating the amazing resilience of animals – a resilience that inspires us to persevere. Fur-Ever Homes specializes in finding you the perfect pet for your family.</h4>
-
-            <br><br>
-        </div>
-              
-        <div class="container contacts">
-            <div class=" favorites col-lg-3 col-md-6 col-xs-12">
-                <img class="petPicture thumbnail" width="261px" height="205px" src="/assets/images/fluff.jpg" alt="fluff" contenteditable="true">
-                <p class="name">Foster parent's name: <span id="edit" contenteditable="true"> John Doe </span></p>
-                <p class="address">Address: <span id="edit2" contenteditable="true"> 100 Everywhere Street </span></p>
-                <p class="phone">Contact #: <span id="edit3" contenteditable="true"> 555-555-4321 </span></p>
-                <p class="email">Email: <span id="edit4" contenteditable="true"> <a href="mailto:johndoe@vmail.com" target ="_top">johndoe@vmail.com</a></span></p> 
-                <p class="hours">Contact hours: <span id="edit5" contenteditable="true"> 10:00 - 4:00 p.m. </span></p>
-            </div>
-            <div class=" favorites col-lg-3 col-md-6 col-xs-12">
-
-            </div>
-            <div class=" favorites col-lg-3 col-md-6 col-xs-12 ">
-
-            </div>
-            <div class=" favorites col-lg-3 col-md-6 col-xs-12">
-                
-            </div>
-        </div>
-
+<!--NAVIGATION -->
+<div class="container hidden">
+		<div class="row top-30">
+         <div class="col-md-2 col-sm-2">
+        <a class="btn btn-default" href="/authors">Manage Posts</a>
+         </div>
     </div>
-    <script>
-$(document).ready(function(){
-  $("#edit").blur(function() {
-    localStorage.setItem('editData', this.innerHTML);
-  });
-
-  if ( localStorage.getItem('editData') ) {
-    $("#edit").html(localStorage.getItem('editData'));
-  }
-});
-
-$(document).ready(function(){
-  $("#edit2").blur(function() {
-    localStorage.setItem('editData2', this.innerHTML);
-  });
-
-  if ( localStorage.getItem('editData2') ) {
-    $("#edit2").html(localStorage.getItem('editData2'));
-  }
-});
-
-$(document).ready(function(){
-  $("#edit3").blur(function() {
-    localStorage.setItem('editData3', this.innerHTML);
-  });
-
-  if ( localStorage.getItem('editData3') ) {
-    $("#edit3").html(localStorage.getItem('editData3'));
-  }
-});
-
-$(document).ready(function(){
-  $("#edit4").blur(function() {
-    localStorage.setItem('editData4', this.innerHTML);
-  });
-
-  if ( localStorage.getItem('editData4') ) {
-    $("#edit4").html(localStorage.getItem('editData4'));
-  }
-});
-
-$(document).ready(function(){
-  $("#edit5").blur(function() {
-    localStorage.setItem('editData5', this.innerHTML);
-  });
-
-  if ( localStorage.getItem('editData5') ) {
-    $("#edit5").html(localStorage.getItem('editData5'));
-  }
-});
-
-</script>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="cms">
+                    <div class="form-group">
+                        <label for="fosterHome">Foster home name: </label>
+                        <input placeholder="Home name" type="text" class="form-control" id="fosterHome">
+                            <br />
+                            <label for="fosterParents">Foster parent name:</label>
+                            <input placeholder="Parent name" type="text" class="form-control" id="fosterParents">
+                                <br>
+                                <label for="address">Address:</label>
+                                <input placeholder="Address" type="text" class="form-control" id="address">
+                                    <br />
+                                    <label for="county">County:</label>
+                                    <input placeholder="County" type="text" class="form-control" id="county">
+                                        <br />
+                                        <label for="contact">Contact number:</label>
+                                        <input placeholder="Contact number" type="text" class="form-control" id="contact">
+                                            <br />
+                                            <label for="email">Email:</label>
+                                            <input placeholder="Email" type="text" class="form-control" id="email">
+                                                <br />
+                                                <label for="hours">Hours:</label>
+                                                <input placeholder="Hours available" type="text" class="form-control" id="hours">
+                                                    <br />
+                                                    <label for="website">Website:</label>
+                                                    <input placeholder="http://" type="text" class="form-control" id="website">
+                                                        <br />
+                                                        <label for="image">Pet image url 1:</label>
+                                                        <input placeholder="http://" type="text" class="form-control" id="image">
+                                                            <br />
+                                                            <label for="image2">Pet image url 2:</label>
+                                                            <input placeholder="http://" type="text" class="form-control" id="image2">
+                                                                <br />
+                                                                <label for="image3">Pet image url 3:</label>
+                                                                <input placeholder="http://" type="text" class="form-control" id="image3">
+                                                                    <br />
+                                                                    <label for="active">Available for adoption?</label>
+                                                                    <select class="form-control" id="active">
+                                                                        <option value="False"> </option>
+                                                                        <option value="True">True</option>
+                                                                        <option value="False">False</option>
+                                                                    </select>
+                                                                    <br />
+						<div class="form-group">
+							<label for="category">Select Author:</label>
+							<select class="form-control" id="author">
+  						</select>
+						</div>
+						<br />
+						<button type="submit" class="btn btn-success submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>

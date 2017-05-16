@@ -1,33 +1,21 @@
 //requirements
 var express = require("express");
 var db = require("../models");
-var router = express.Router();
 
 //controller for foster homes
 module.exports = function(app) {
 
-//     //display signup page
-//     router.get("/signup", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("signup", hbsObject);
-//     });
-//     //display customer results
-//     router.get("/search", function(req, res) {
-//         var hbsObject = {BadPassword: true, baderror: "Incorrect Password"};
-//         return res.render("customer_results", hbsObject);
-//     });
-
     //display foster home information on foster home page
 
-    app.get("/login", function (req, res) {
+    app.get("/login", function(req, res) {
         res.render("login");
     })
 
-    app.get("/signup", function (req,res) {
+    app.get("/signup", function(req, res) {
         res.render("signup");
     })
 
-    app.get("/authors/:id", function (req, res) {
+    app.get("/foster_home/:id", function(req, res) {
         db.fosterHome.findAll({
             where: {
                 id: req.params.id
@@ -43,7 +31,7 @@ module.exports = function(app) {
     })
 
     //add new foster home information
-    app.post("/authors", function (req, res) {
+    app.post("/add_foster_home", function(req, res) {
         db.Foster.Create({
             fosterHome: req.body.fosterHome,
             fosterParents: req.body.fosterParents,
@@ -59,7 +47,7 @@ module.exports = function(app) {
             res.redirect("/foster_home_edit");
         }).catch(function (error) {
             console.log(error.message);
-            res.status(500).json({error: error.message});
+            res.status(500).json({ error: error.message });
         });
     });
 

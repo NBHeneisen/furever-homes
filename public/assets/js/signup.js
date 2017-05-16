@@ -4,7 +4,7 @@ $(document).ready(function() {
     let passwordtoMatch = []
     let emailtomatch = []
     let email;
-    var name = $('#name');
+    //var name = $('#name');
     var username = $('#username');
 
 
@@ -67,8 +67,8 @@ $(document).ready(function() {
         console.log(passwordArr, passwordtoMatch)
     });
 
-    let Confirm = (email, name, username) => {
-        if (passwordArr.length >= 5 && passwordtoMatch.length >= 5 && name.val().length >= 4 && username.val().length >= 4) {
+    let Confirm = (email, username) => {
+        if (passwordArr.length >= 5 && passwordtoMatch.length >= 5 && username.val().length >= 4) {
             if (passwordArr.toString() == passwordtoMatch.toString()) {
                 console.log('password matches')
                     // console.log(email)
