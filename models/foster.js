@@ -16,45 +16,36 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
         fosterHome: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
         fosterParents: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
         address: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
         county: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
 
         contact: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
 
         email: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
         hours: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
       website: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
       image: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
       },   
       active: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
+        type: DataTypes.BOOLEAN
   },
     },
       {
