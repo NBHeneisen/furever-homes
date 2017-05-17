@@ -1,6 +1,4 @@
 module.exports = function(sequelize, DataTypes) {
-<<<<<<< HEAD
-    // Define the Pets Sequelize model
     // Define the Pets Sequelize model
     var Pets = sequelize.define("Pets", {
         // Pet Name
@@ -13,22 +11,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-=======
-  // Define the Pets Sequelize model
-  var Pets = sequelize.define("Pets", 
-    {
-      // Pet Name
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-  //Species
-      species: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
->>>>>>> 9da5e215c4d5fe36480bc247949443bec5a2e7b9
-
         age: {
             type: DataTypes.STRING,
             allowNull: false
