@@ -53,32 +53,33 @@ module.exports = function(app) {
             res.status(500).json({ error: error.message });
         });
     });
-
+    
+    app.post("/signin", function(req, res){
+        db.Foster.findOne({
+            username: req.body.username
+        })
+        .then(function(foster){
+            if (!foster) {
+                console.log("User not found");
+                res.status(400).json({
+                    'status' : 'Invalid Username or Password'
+                })
+            }else {
+                bcrypt.compare(req.body.password, foster.password, function(err, res){
+                    if (err || !valid) {
+                        res.status(400).json({
+                            'status' : 'Invalid Username or Password'
+                        });
+                    }
+                });
+                res.status(200).json({
+                    id: foster.id,
+                    username: foster.username
+                });
+            }
+        });
+    });
 
 };
 
-app.post("/signin", function(req, res){
-    db.Foster.findOne({
-        username: req.body.username
-    })
-    .then(function(foster){
-        if (!foster) {
-            console.log("User not found");
-            res.status(400).json({
-                'status' : 'Invalid Username or Password'
-            })
-        }else {
-            bcrypt.compare(req.body.password, foster.password, function(err, res){
-                if (err || !valid) {
-                    res.status(400).json({
-                          'status' : 'Invalid Username or Password'
-                    });
-                })
-            });
-            res.status(200).json({
-                id: foster.id,
-                username: foster.username
-            });
-        }
-    });
-});
+
