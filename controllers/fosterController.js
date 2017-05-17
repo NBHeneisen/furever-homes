@@ -1,7 +1,6 @@
 //requirements
 var express = require("express");
 var db = require("../models");
-var router = express.Router();
 var bcrypt = require("bcrypt");
 
 //controller for foster homes
@@ -17,24 +16,44 @@ module.exports = function(app) {
         res.render("signup");
     })
 
-    app.get("/foster_home/:id", function(req, res) {
-        db.fosterHome.findAll({
+    app.get("/admin", function(req, res) {
+        db.FosterHome.findOne({
             where: {
                 id: req.params.id
             }
-        }).then(function(dbPets) {
-            res.render("index", { result: dbPets });
+        }).then(function(dbFoster) {
+            res.render("admin_page", { result: id });
         });
     });
 
 
-    //add new foster home information
-    app.post("/add_foster_home", function (req, res) {
+    //collect initial signup info
+    app.post("/signup/", function(req,res) {
         var saltRounds = 10;
         var hash = bcrypt.hashSync(req.body.password, saltRounds);
         console.log(hash);
-        db.Foster.Create({
-            username: req.body.username,
+        db.FosterHome.create({
+            userName: req.body.userName,
+            password: req.body.password,
+            email: req.body.email,
+            active: true
+        }).then(function(dbFoster) {
+            console.log(dbFoster.id);
+            res.render("admin_page", {result: dbFoster.id});
+        })
+        .catch(function (error) {
+            console.log(error.message);
+            res.status(500).json({error: error.message});
+        });
+    });
+
+    //add new foster home information
+    app.post("/foster_edit", function (req, res) {
+        var saltRounds = 10;
+        var hash = bcrypt.hashSync(req.body.password, saltRounds);
+        console.log(hash);
+        db.FosterHome.Create({
+            userName: req.body.userName,
             password: hash,
             fosterHome: req.body.fosterHome,
             fosterParents: req.body.fosterParents,
@@ -56,7 +75,7 @@ module.exports = function(app) {
     
     app.post("/signin", function(req, res){
         db.Foster.findOne({
-            username: req.body.username
+            userName: req.body.userName
         })
         .then(function(foster){
             if (!foster) {
@@ -80,6 +99,9 @@ module.exports = function(app) {
         });
     });
 
+
+
 };
+
 
 
