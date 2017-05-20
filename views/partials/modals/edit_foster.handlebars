@@ -1,0 +1,33 @@
+<div id="edit_foster_modal" class="modal">
+    <form id="cms" method="POST" action="/update_foster">
+        <div class="form-group">
+            <input name="id" type="hidden" placeholder={{id}} value={{id}} readonly>
+            <label for="fosterHome">Foster home name: </label>
+            <input  {{#if fosterHome}} value="{{fosterHome}}" {{/if}} type="text" class="form-control" name="fosterHome">
+            <br />
+            <label for="fosterParents">Foster parent name:</label>
+            <input {{#if fosterParents}} value="{{fosterParents}}" {{/if}} type="text" class="form-control" name="fosterParents">
+            <br>
+            <label for="address">Address:</label>
+            <input {{#if address}} value="{{address}}" {{/if}} type="text" class="form-control" name="address">
+            <br />
+            <label for="county">County:</label>
+            <input {{#if county}} value="{{county}}" {{/if}} type="text" class="form-control" name="county">
+            <br />
+            <label for="contact">Contact number:</label>
+            <input {{#if contact}} value="{{contact}}" {{/if}} type="text" class="form-control" name="contact">
+            <br />
+            <label for="email">Email:</label>
+            <input {{#if email}} value="{{email}}" {{/if}} type="text" class="form-control" name="email">
+            <br />
+            <label for="hours">Hours:</label>
+            <input {{#if hours}} value="{{hours}}" {{/if}} type="text" class="form-control" name="hours">
+            <br />
+            <label for="website">Website:</label>
+            <input {{#if website}} value="{{website}}" {{/if}} type="text" class="form-control" name="website">
+            <br />
+            <button type="submit" class="btn btn-primary submit modal_btn">Submit</button>
+            <button type="button" class="btn btn-danger submit modal_btn cancel">Cancel</button>
+        </div>
+    </form>
+</div>
