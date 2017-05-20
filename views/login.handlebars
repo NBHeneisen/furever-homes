@@ -1,7 +1,7 @@
 
    <!-- Navigation -->
 <link rel="stylesheet" href="/assets/css/login.css">
-     <div>
+<script src="/assets/js/circletype.min.js"></script>
      <script src="/assets/js/login.js"></script>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
      
@@ -18,10 +18,7 @@
                             <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
                         </li>
                     <li id="signup">
-                        <a href="/signup"><span class="glyphicon glyphicon-user"></span>Signup</a>
-                    </li>
-                    <li>
-                        <a href="/admin"><span class="glyphicon glyphicon-pencil"></span> Edit Foster Home Page</a>
+                        <a href="/signup"><span class="glyphicon glyphicon-user"></span> Signup</a>
                     </li>
                 </ul>
             </div>
@@ -31,7 +28,7 @@
 
 <!--main-->
 
-<form class="login" method="POST" action="/login" >
+<form class="login" method="POST" action="/signin" >
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"></label>
@@ -49,8 +46,8 @@
                         <label for="pass" class="label">Password</label>
                         <input type="password" id="pass" name="password" type="password" class="input" data-type="password">
                     </div>
-                    <div class="group">
-                        <a href="/contact"><input type="submit" class="button" value="Log In">
+                    <div class="wrapper">
+                        <button type="submit" class="btn btn-primary" id="text-enter-button">Log In</button>
                     </div>
             </div>
         </div>

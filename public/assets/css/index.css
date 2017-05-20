@@ -15,12 +15,18 @@ video {
 
 h1 {
     color: white;
-    margin-left: 20px;
-    font-family: "Denmark";
+    margin-left: 35px;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+li {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
 }
 
 .adaption {
-    font-family: 'Gabriela';
+    font-family: 'Fira Sans', sans-serif;
     font-size: 56px;
     margin-bottom: -150px;
     margin-top: 100px;

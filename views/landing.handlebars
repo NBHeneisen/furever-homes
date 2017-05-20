@@ -1,0 +1,79 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/circletype.min.js"></script>
+<script src="/assets/js/landing.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/css/landing.css">
+
+{{!--NAVIBATION--}}
+
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     
+        <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <h1>FUR-EVER HOMES</h1>
+
+                </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="home">
+                            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+                        </li>
+
+            </div>
+        </div>
+</nav>
+
+<div class="container2">
+    <h1> {{userName}}</h1>
+    <!--edit and remove buttons aligned to the right -->
+    {{#if image}}
+  <img src={{image}} alt="Image">
+{{/if}}
+    <h2> {{fosterHome}} </h2>
+    <h3>Foster parents: {{fosterParents}} </h3>
+    <h3>Address: {{address}} </h3>
+    <h3>County: {{county}} </h3>
+    <h3>Contact: {{contact}} </h3>
+    <h3>Email: {{email}} </h3>
+    <h3>Hours: {{hours}} </h3>
+    <h3> {{website}} </h3>
+    <button type="submit" id="foster_edit" class="btn btn-primary">Edit</button>
+    <h2>Pets</h2> {{#each Pets}}
+    <div class="row">
+        <!--change columns widths as needed for best fit-->
+        <div class="col-sm-1">
+            <h4> {{name}} </h4>
+        </div>
+        <div class="col-sm-1">
+            <h4> {{species}} </h4>
+        </div>
+        <div class="col-sm-1">
+            <h4> {{age}} </h4>
+        </div>
+        <div class="col-sm-1">
+            <h4> {{temper}} </h4>
+        </div>
+        <div class="col-sm-1">
+            <h4> {{gender}} </h4>
+        </div>
+        <div class="col-sm-1" id="describe">
+            <h4> {{description}} </h4>
+        </div>
+        <div class="col-sm-1" id="image">
+            {{#if image}}
+                 <img src={{image}} alt="Image" width="150px">
+            {{/if}}
+        </div>
+        <div class="col-sm-1" id="btn">
+        <button type="submit" id="edit" data-id={{@index}} class="btn btn-primary edit">Edit</button>
+        </div>
+        <div class="col-sm-1" id="btn2">
+        <button type="submit" id="delete"  data-id={{id}} class="btn btn-primary delete">Delete</button>
+        {{> modals/edit_pet}}
+        </div>
+  </div>
+    {{/each}}
+    <button type="submit" id="add-pet" class="btn btn-primary">Add</button>
+    {{> modals/delete_pet}} {{> modals/add_pet}} {{> modals/edit_foster}}
+</div>

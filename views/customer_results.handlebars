@@ -1,11 +1,10 @@
 {{!-- animal search --}}
 
 <link rel="stylesheet" href="/assets/css/customer_results.css">
+<script src="/assets/js/circletype.min.js"></script>
 <script src="/assets/js/customer_results.js"></script>
 
 <!-- Navigation -->
-
-<link rel="stylesheet" href="/static/css/searchPage.css">
     <div>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -27,27 +26,27 @@
 
 <div class="container">
 
-<!-- Modal -->
+{{!-- <!-- Modal -->
     <div class="modal fade" id="resultsModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title" id="resultsModalLabel"><strong>Meet {{this.petname}}!</strong></h2>
+                        <h2 class="modal-title" id="resultsModalLabel"><strong>Meet {{this.name}}!</strong></h2>
                 </div>
                             <div class="modal-body">
-                                <img class="petPicture thumbnail myBtn" width="300px" height="300px" src="{{this.petPicture}}" alt="">
+                                <img class="petPicture thumbnail myBtn" width="300px" src="{{this.image}}" alt="">
                                     <p>{{this.description}}</p>
-                                    <p>Foster parents name: {{this.foster-homesName}}</p>
-                                    <p>Foster parents email address: {{this.foster-homesEmail}}</p>
-                                    <p>Foster parents phone number: {{this.foster-homesContact}}
+                                    <p>Foster parents name: {{this.fosterHome}}</p>
+                                    <p>Foster parents email address: {{this.email}}</p>
+                                    <p>Foster parents phone number: {{this.contact}}
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="row main">
         <div class="main-login main-center text-center">
@@ -59,9 +58,9 @@
             
                     <div class="cols-sm-10">
                         <label id="search-pet">Select species:</label>
-                        <select class="form-control" name="animalType" placeholder="Species">
-                            {{#if data.animal}}
-                            <option>{{data.animal}}</option>
+                        <select class="form-control" name="species" placeholder="Species">
+                            {{#if data.species}}
+                            <option>{{data.species}}</option>
                             {{/if}}
                             <option> </option>
                             <option>Cat</option>
@@ -71,12 +70,10 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group">
-                  
                     <div class="cols-sm-10">
                         <label id="search-pet">Age:</label>
-                        <select class="form-control" name="animalAge">
+                        <select class="form-control" name="age">
                             {{#if data.age}}
                             <option>{{data.age}}</option>
                             {{/if}}
@@ -91,7 +88,7 @@
                    
                     <div class="cols-sm-10">
                         <label id="search-pet">Gender:</label>
-                        <select class="form-control" name="animalGender">
+                        <select class="form-control" name="gender">
                             {{#if data.gender}}
                             <option>{{data.gender}}</option>
                             {{/if}}
@@ -104,12 +101,12 @@
 
                 <div class="cols-sm-10">
                         <label id="search-pet">Temperament:</label>
-                        <select class="form-control" name="animalTemp">
-                            {{#if data.temp}}
-                            <option>{{data.temp}}</option>
+                        <select class="form-control" name="temper">
+                            {{#if data.temper}}
+                            <option>{{data.temper}}</option>
                             {{/if}}
                             <option>  </option>
-                            <option>Social - good with children and other animals</option>
+                            <option>Social</option>
                             <option>High energy</option>
                             <option>Low energy</option>
                             <option>Anxious</option>
@@ -121,12 +118,38 @@
                 <br>
                 <br>
 
-                <button type="submit" id="button" class=" btn btn-primary btn-lg btn-block login-button "><strong>Search For Pet</strong></button>
+                <button type="submit" id="button" class=" btn btn-primary btn btn-block login-button "><strong>Search For Pet</strong></button>
 
             </form>
         </div>
     </div>
+
+    <div id="results">
+        {{#each result}}
+            {{#if image}}
+                 <img src={{image}} alt="Image" class="info" data-id={{@index}} height="150px">
+            {{/if}}
+            {{#if description}}
+                 <p>{{description}}</p>
+            {{/if}}
+            {{#if fosterHome}}
+                 <p>{{fosterHome}}</p>
+            {{/if}}
+            {{#if email}}
+                 <p>{{email}}</p>
+            {{/if}}
+            {{#if contact}}
+                 <p>{{contact}}</p>
+            {{/if}}
+            {{> modals/search_pet}}
+        {{/each}}
+    </div>
 </div>
+
+
+
+
+
 
 
 

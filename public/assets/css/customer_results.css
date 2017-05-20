@@ -1,19 +1,30 @@
 body {
     background: url('http://www.heavenlyhousesitting.com/images/pet-group-3.png') no-repeat;
-    margin: 0;
     background-size: cover;
-    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+h1 {
+    color: white;
+    margin-left: 35px;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+li {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
 }
 
 #search-pet {
     color: white;
 }
 
+.modal{
+    max-height: calc(300vh - 325px);
+    overflow-y: auto;
+    background: rgba(40, 57, 101, .5);
 
-/*#choice {
-    color: black;
-    font-size: 20px;
-}*/
+}
 
 *,
 :after,
@@ -21,14 +32,14 @@ body {
     box-sizing: border-box
 }
 
-h1 {
-    color: white;
-    margin-left: 20px;
-    font-family: "Denmark";
-}
-
 h2 {
     color: white;
+    font-family: 'Lobster', cursive;
+}
+
+#search-pet {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
 }
 
 .clearfix:after,
@@ -48,9 +59,11 @@ a {
 }
 
 #button {
-    width: 400px;
+    width: 200px;
     align-content: center;
-    margin-left: 375px;
+    margin-left: 475px;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
 }
 
 .main-center {
@@ -70,4 +83,19 @@ a {
 
 .main {
     margin-top: 100px;
+}
+
+#results{
+    overflow: auto;
+    overflow-y: hidden;
+    position: fixed;
+    bottom: 0;
+}
+
+#cms{
+    width: 600px;
+    margin: 75px auto;
+    padding: 25px;
+    color: white;
+    background: rgba(40, 57, 101, .9);
 }

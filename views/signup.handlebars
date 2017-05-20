@@ -1,7 +1,8 @@
-
+    
 
 {{!-- <script src ="static/js/signup.js" ></script> --}}
 <link rel="stylesheet" href="/assets/css/signup.css">
+<script src="/assets/js/circletype.min.js"></script>
 <script src="/assets/js/signup.js"></script>
 
 <!-- Navigation -->
@@ -15,13 +16,10 @@
             <div>
                 <ul class="nav navbar-nav navbar-right">
                     <li id="home">
-                            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+                            <a href="/"><span class="glyphicon glyphicon-home"></span>  Home</a>
                         </li>
                     <li id="login">
-                        <a href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
-                    </li>
-                    <li>
-                        <a href="/admin"><span class="glyphicon glyphicon-pencil"></span> Foster Home Page</a>
+                        <a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a>
                     </li>
                 </ul>
             </div>
@@ -42,31 +40,60 @@
                         {{#if baderror}}
                         <h4 class="BadPass">{{baderror}}</h4>
                         {{/if}}
-                        <form action="/authors" method="POST">
-                            <div class="group">
-                                <label for="user" class="label">Name</label>
-                                <input id="user" type="text" name="name"  class="input">
-                            </div>
                             <div class="group">
                                 <label for="user" class="label">Username</label>
-                                <input id="user" type="text" name="username"  class="input">
+                                <input id="username" type="text" name="userName"  class="input">
                             </div>
                             <div class="group">
-                                <label for="pass" class="label">Password</label>
-                                <input id="pass" type="password" id="password" name="password"  class="input" data-type="password">
+                                <label for="password" class="label">Password</label>
+                                <input id="pass" type="password"  name="password"  class="input" data-type="password">
                             </div>
                             <div class="group">
-                                <label for="pass" class="label">Repeat Password</label>
+                                <label for="password" class="label">Repeat Password</label>
                                 <input id="pass" type="password" class="input" name="confirm" data-type="password">
                             </div>
                             <div class="group">
-                                <label for="pass" class="label">Email Address</label>
-                                <input id="pass" type="text" name="email" class="input">
+                                <label for="home" class="label">Foster home name</label>
+                                <input id="pass" type="text" name="fosterHome" class="input">
                             </div>
                             <div class="group">
-                                <input type="submit" class="button" value="Sign Up">
+                                <label for="parent" class="label">Foster parent name</label>
+                                <input id="pass" type="text" name="fosterParents" class="input">
                             </div>
-                        </form>
+                            <div class="group">
+                                <label for="address" class="label">Address</label>
+                                <input id="password" type="text" name="address" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="county" class="label">County</label>
+                                <input id="pass" type="text" name="county" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="contact" class="label">Contact number</label>
+                                <input id="pass" type="integer" name="contact" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="email" class="label">Email</label>
+                                <input id="email" type="text" name="email" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="hours" class="label">Hours</label>
+                                <input id="pass" type="text" name="hours" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="website" class="label">Foster home website</label>
+                                <input id="pass" type="text" name="website" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="image" class="label">Foster home image url</label>
+                                <input id="pass" type="text" name="image" class="input">
+                            </div>
+                            <div class="group">
+                                <br>
+                                <br>
+                            <div class="wrapper">
+                                <input type="submit" class="button" alignvalue="Sign Up">
+                            </div>
                     </div>
                 </div>
             </div>

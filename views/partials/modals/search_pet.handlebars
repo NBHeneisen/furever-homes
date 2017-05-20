@@ -1,0 +1,21 @@
+<!-- Modal -->
+<div class="modal_box modal" id={{@index}}>
+    <form id="cms" method="POST" action="/search_pet">
+        <div class="modal-header">
+            <h2 class="modal-title" id="resultsSearchPet"><strong>Meet {{name}}!</strong></h2>
+        </div>
+        <br />
+        <div class="modal-body">
+            <img class="petPicture thumbnail myBtn" width="300px" src="{{image}}" alt="">
+            <br />
+            <h3>{{description}}</h3>
+                <br />
+                <h3>Foster parents name: {{FosterHome.fosterHome}}</h3>
+                <br />
+                <h3>Foster parents email address: {{FosterHome.email}}</h3>
+                <br />
+                <h3>Foster parents phone number: {{FosterHome.contact}}</h3>
+            <button type="button" class="btn btn-danger submit modal_btn cancel">Cancel</button>
+        </div>
+    </form>
+</div>

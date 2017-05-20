@@ -2,21 +2,24 @@ $(document).ready(function() {
 
     console.log('ready');
 
-    $('.myBtn').on('click', function(e) {
+    $(".modal_box").hide();
+    var modal_index;
 
+     $(".info").on("click", function(e) {
+        e.preventDefault();
 
-        //console.log($(this).parent().find('.description')["0"].innerHTML)
-        // var text = $(this).parent().find('.description')["0"].innerHTML
-        console.log($(this).parent().find('.fix')["0"].innerHTML);
-        $(".myModal").find('.description').text($(this).parent().find('.fix')["0"].innerHTML);
-        //our text!
+        var index = $(this).data().id
+        console.log("id is", index);
+        index = "#" + index;
+        $(index).show();
+    });
 
-        $(".myModal").css("display", "block")
-            // e.preventDefault();
-    })
-    $(".close").on('click', function(e) {
-        $(".myModal").css("display", "none")
-    })
+     $(".cancel").on("click", function(e) {
+        e.preventDefault();
+        console.log("clicked");
+        $(".modal").hide();
+
+    });
 
 
 })

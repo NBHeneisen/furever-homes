@@ -1,0 +1,17 @@
+<!-----
+------ DELETE MODAL -------
+---->
+
+<div id="delete_modal" class="modal">
+    <form id="cms" method="POST" action="/delete_pet">
+        <div class="form-group">
+            <input id="pet_id" name="id" type="hidden" readonly>
+            <div class="form-group">
+                <h3>Are you sure you want to delete this pet?</h3>
+            </div>
+            <br />
+            <button type="submit" id="confirm_del" class="btn btn-success submit modal_btn">Delete</button>
+            <button type="button" class="btn btn-danger submit modal_btn cancel">Cancel</button>
+        </div>
+    </form>
+</div>

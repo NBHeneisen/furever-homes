@@ -1,62 +1,66 @@
 module.exports = function(sequelize, DataTypes) {
-  
-  // Define the Foster Sequelize model
-  var FosterHome = sequelize.define("FosterHome", 
-    {
-      // Name
+
+    // Define the Foster Sequelize model
+    var FosterHome = sequelize.define("FosterHome", {
+        // Name
         userName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [6,20]
-        }
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [6, 20]
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         fosterHome: {
-        type: DataTypes.STRING
-      },
-        fosterParents: {
             type: DataTypes.STRING
+        },
+        fosterParents: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         address: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         county: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
 
         contact: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
 
         email: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         hours: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        website: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        image: {
             type: DataTypes.STRING
         },
-      website: {
-        type: DataTypes.STRING
-      },
-      image: {
-        type: DataTypes.STRING
-      },   
-      active: {
-        type: DataTypes.BOOLEAN
-  },
-    },
-      {
+        active: {
+            type: DataTypes.BOOLEAN
+        },
+    }, {
         classMethods: {
-          associate: function(models) {
-            FosterHome.hasMany(models.Pets, {
-              onDelete: "cascade"
-            });
-          }
+            associate: function(models) {
+                FosterHome.hasMany(models.Pets, {
+                    onDelete: "cascade"
+                });
+            }
         }
-      }
-    );
-  return FosterHome;
+    });
+    return FosterHome;
 };

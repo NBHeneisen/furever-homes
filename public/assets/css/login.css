@@ -1,12 +1,45 @@
-
 body {
     background: url('https://static.pexels.com/photos/59523/pexels-photo-59523.jpeg') no-repeat;
-    margin: 0;
-    /*color: #6a6f8c;
-    background: #c8c8c8;*/
     background-size: cover;
-    font: 600 16px/18px 'Open Sans', sans-serif;
 }
+
+h1 {
+    color: white;
+    margin-left: 35px;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+li {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
+}
+
+#text-enter-button {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+.label {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
 .wrongPassword {
     color: red;
     font-weight: bolder;
@@ -16,10 +49,9 @@ body {
     width: 100%;
     margin: auto;
     max-width: 525px;
-    min-height: 670px;
+    min-height: 400px;
     position: relative;
     opacity: .6;
-    /*background:  no-repeat center;*/
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
     transition: 1s opacity;
 }
@@ -27,7 +59,6 @@ body {
 .login-wrap:hover {
     opacity: 1;
     transition: 1s opacity;
-    /*background:  no-repeat center;*/
 }
 
 .login-html {

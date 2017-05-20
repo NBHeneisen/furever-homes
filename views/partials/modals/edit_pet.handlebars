@@ -1,0 +1,67 @@
+<!-----
+------ EDIT MODAL -------
+---->
+<div id={{@index}} class="modal">
+    <form id="cms" method="POST" action="/update_pet">
+        <div class="form-group">
+            <input name="foster_id" type="hidden" placeholder={{FosterHomeId}} value={{FosterHomeId}} readonly>
+            <input name="id" type="hidden" placeholder={{id}} value={{id}} readonly>
+            <label for="name">Pet name: </label>
+            <input value="{{this.name}}" type="text" class="form-control" name="name">
+            <br />
+            <label for="species">Species:</label>
+            <input value= "{{this.species}}"  type="text" class="form-control" name="species">
+                {{!-- <select class="form-control" name="species">
+                    <option> </option>
+                    <option>Cat</option>
+                    <option>Dog</option>
+                    <option>Horse</option>
+                    <option>Bird</option>
+                </select> --}}
+            <br>
+            <label for="age">Age:</label>
+            <input value= "{{this.age}}"  type="text" class="form-control" name="age">
+                {{!-- <select class="form-control" name="age">
+                    <option>  </option>
+                    <option>Birth to 18 months</option>
+                    <option>18 months to 6 years</option>
+                    <option>6 years plus</option>
+                </select> --}}
+            <br />
+            <label for="temper">Temperament:</label>
+            <input value= "{{this.temper}}"  type="text" class="form-control" name="temper">
+                {{!-- <select class="form-control" name="temper">
+                    <option>  </option>
+                    <option>Social</option>
+                    <option>High energy</option>
+                    <option>Low energy</option>
+                    <option>Anxious</option>
+                </select> --}}
+            <br />
+            <label for="gender">Gender:</label>
+            <input value= "{{this.gender}}"  type="text" class="form-control" name="gender">
+            <br />
+                {{!-- <select class="form-control" name="gender">
+                    <option>  </option>
+                    <option>Female</option>
+                    <option>Male</option>
+                </select> --}}
+            <label for="description">Description:</label>
+            <input value= "{{this.description}}" type="text" class="form-control" name="description">
+            <br />
+            <label for="image">Pet image url:</label>
+            <input value= "{{this.image}}" type="text" class="form-control" name="image">
+            <br />
+            <label for="available">Available for adoption?</label>
+            <select class="form-control" name="available">
+                <option value="True"> </option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+            <br />
+            <br />
+            <button type="submit" id="submit" class="btn btn-primary submit modal_btn">Submit</button>
+            <button type="button" class="btn btn-danger submit modal_btn cancel">Cancel</button>
+        </div>
+    </form>
+</div>

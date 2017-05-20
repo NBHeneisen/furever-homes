@@ -1,21 +1,39 @@
-
-
-body { 
-  background: url(https://static.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg) no-repeat center center fixed; 
-  background-size: cover;
+body {
+    background: url(https://static.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg) no-repeat center center fixed;
+    background-size: cover;
 }
 
 h1 {
     color: white;
-    margin-left: 20px;
-    font-family: "Denmark";
+    margin-left: 35px;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+li {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
+}
+
+.label {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
 }
 
 .login-wrap {
     width: 100%;
     margin: auto;
     max-width: 525px;
-    min-height: 670px;
+    min-height: 1270px;
     position: relative;
     opacity: .6;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
@@ -171,6 +189,7 @@ h1 {
 .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
     transform: rotate(0);
 }
+
 
 /*.BadPass {
     color: orangered;
