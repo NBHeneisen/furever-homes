@@ -32,11 +32,4 @@ module.exports = function(app) {
 
         res.render("customer_results");
     });
-
-    // //display pet information of a specific foster home to foster home admin page
-    // app.get("/admin", function(req, res) {
-    //     db.Pets.findAll({
-    //         where: {}
-    //     })
-    // });
 };
