@@ -8,6 +8,7 @@ module.exports = function(app) {
     //post pet information to the database from the admin screen
     app.post("/add_pet", function(req, res) {
         console.log("I'm adding this to pets", req.body);
+
         db.Pets.create({
             name: req.body.name,
             species: req.body.species,
@@ -18,6 +19,7 @@ module.exports = function(app) {
             description: req.body.description,
             FosterHomeId: req.body.id
         }).then(function(dbPets) {
+
             console.log(dbPets);
             db.FosterHome.findOne({
                     where: {

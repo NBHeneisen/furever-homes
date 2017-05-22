@@ -29,7 +29,6 @@ module.exports = function(app) {
     });
 
     app.get("/find", function(req, res) {
-
         res.render("customer_results");
     });
 };
