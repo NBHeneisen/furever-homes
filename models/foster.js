@@ -1,6 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-<<<<<<< HEAD
-
+  
     // Define the Foster Sequelize model
     var FosterHome = sequelize.define("FosterHome", {
         // Name
@@ -18,25 +17,6 @@ module.exports = function(sequelize, DataTypes) {
         fosterHome: {
             type: DataTypes.STRING
         },
-=======
-  
-  // Define the Foster Sequelize model
-  var FosterHome = sequelize.define("FosterHome", 
-    {
-      // Name
-        userName: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-        fosterHome: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
         fosterParents: {
             type: DataTypes.STRING,
             allowNull: false
@@ -81,13 +61,6 @@ module.exports = function(sequelize, DataTypes) {
                 });
             }
         }
-<<<<<<< HEAD
     });
     return FosterHome;
 };
-=======
-      }
-    );
-  return FosterHome;
-};
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6

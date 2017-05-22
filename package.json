@@ -2,9 +2,11 @@
   "name": "furever-homes",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "aws-sdk": "^2.50.0",
+    "bcrypt": "^1.0.2",
+
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",

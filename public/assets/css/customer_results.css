@@ -19,20 +19,11 @@ li {
     color: white;
 }
 
-<<<<<<< HEAD
 .modal{
     max-height: calc(300vh - 325px);
     overflow-y: auto;
     background: rgba(40, 57, 101, .5);
-
 }
-=======
-
-/*#choice {
-    color: black;
-    font-size: 20px;
-}*/
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
 
 *,
 :after,
@@ -91,7 +82,6 @@ a {
 
 .main {
     margin-top: 100px;
-<<<<<<< HEAD
 }
 
 #results{
@@ -108,6 +98,4 @@ a {
     color: white;
     background: rgba(40, 57, 101, .9);
 }
-=======
-}
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
+

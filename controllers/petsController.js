@@ -7,10 +7,8 @@ module.exports = function(app) {
 
     //post pet information to the database from the admin screen
     app.post("/add_pet", function(req, res) {
-<<<<<<< HEAD
         console.log("I'm adding this to pets", req.body);
-=======
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
+
         db.Pets.create({
             name: req.body.name,
             species: req.body.species,
@@ -21,7 +19,7 @@ module.exports = function(app) {
             description: req.body.description,
             FosterHomeId: req.body.id
         }).then(function(dbPets) {
-<<<<<<< HEAD
+
             console.log(dbPets);
             db.FosterHome.findOne({
                     where: {
@@ -33,16 +31,12 @@ module.exports = function(app) {
                     var hbsObject = foster.dataValues;
                     res.render("landing", hbsObject);
                 });
-=======
-            res.redirect("/admin")
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
         }).catch(function(error) {
             console.log(error.message);
             res.status(500).json({ error: error.message });
         });
     });
 
-<<<<<<< HEAD
     //delete pet 
     app.post("/delete_pet", function(req, res) {
         console.log("DELETE REQUEST", req.body);
@@ -85,15 +79,7 @@ module.exports = function(app) {
                     var hbsObject = foster.dataValues;
                     res.render("landing", hbsObject);
                 });
-=======
-    //edit pet information from admin page
-<<<<<<< HEAD
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
 
         });
     });
 };
-=======
-    
-};
->>>>>>> 9da5e215c4d5fe36480bc247949443bec5a2e7b9

@@ -19,12 +19,7 @@ $(document).ready(function() {
         console.log("clicked");
         $(".modal").hide();
 
-<<<<<<< HEAD
     });
 
-
 })
-=======
 
-})
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6

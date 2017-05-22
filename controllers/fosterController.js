@@ -1,27 +1,14 @@
 //requirements
 var express = require("express");
 var db = require("../models");
-<<<<<<< HEAD
 var bcrypt = require("bcrypt");
-=======
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
 
 //controller for foster homes
 module.exports = function(app) {
 
-<<<<<<< HEAD
     //display foster home information on foster home page
 
     app.get("/login", function(req, res) {
-=======
-<<<<<<< HEAD
-    //display foster home information on foster home page
-
-    app.get("/login", function(req, res) {
-=======
-    app.get("/login", function (req, res) {
->>>>>>> 9da5e215c4d5fe36480bc247949443bec5a2e7b9
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
         res.render("login");
     })
 
@@ -29,7 +16,6 @@ module.exports = function(app) {
         res.render("signup");
     })
 
-<<<<<<< HEAD
     app.get("/admin", function(req, res) {
         db.FosterHome.findOne({
             where: {
@@ -37,20 +23,10 @@ module.exports = function(app) {
             }
         }).then(function(dbFoster) {
             res.render("admin_page", { result: id });
-=======
-    app.get("/foster_home/:id", function(req, res) {
-        db.fosterHome.findAll({
-            where: {
-                id: req.params.id
-            }
-        }).then(function(dbPets) {
-            res.render("index", { result: dbPets });
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
         });
     });
 
-
-    //collect initial signup info
+  //collect initial signup info
     app.post("/signup/", function(req, res) {
         console.log("sign up request body", req.body)
         var saltRounds = 10;
@@ -104,8 +80,6 @@ module.exports = function(app) {
             });
     });
 
-    //add new foster home information
-<<<<<<< HEAD
     app.post("/foster_edit", function(req, res) {
         var saltRounds = 10;
         var hash = bcrypt.hashSync(req.body.password, saltRounds);
@@ -113,10 +87,6 @@ module.exports = function(app) {
         db.FosterHome.Create({
             userName: req.body.userName,
             password: hash,
-=======
-    app.post("/add_foster_home", function(req, res) {
-        db.Foster.Create({
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
             fosterHome: req.body.fosterHome,
             fosterParents: req.body.fosterParents,
             address: req.body.address,
@@ -132,7 +102,6 @@ module.exports = function(app) {
         }).catch(function(error) {
             console.log(error.message);
             res.status(500).json({ error: error.message });
-<<<<<<< HEAD
         });
     });
 
@@ -213,11 +182,7 @@ module.exports = function(app) {
             });
                 
             
-=======
->>>>>>> fd8271e48aa8da210c329ea9bc0cd77582306ae6
         });
     });
-
-
 
 };
