@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-
+  
     // Define the Foster Sequelize model
     var FosterHome = sequelize.define("FosterHome", {
         // Name

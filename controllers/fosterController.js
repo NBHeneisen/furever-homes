@@ -26,8 +26,7 @@ module.exports = function(app) {
         });
     });
 
-
-    //collect initial signup info
+  //collect initial signup info
     app.post("/signup/", function(req, res) {
         console.log("sign up request body", req.body)
         var saltRounds = 10;
@@ -81,7 +80,6 @@ module.exports = function(app) {
             });
     });
 
-    //add new foster home information
     app.post("/foster_edit", function(req, res) {
         var saltRounds = 10;
         var hash = bcrypt.hashSync(req.body.password, saltRounds);
@@ -186,7 +184,5 @@ module.exports = function(app) {
             
         });
     });
-
-
 
 };

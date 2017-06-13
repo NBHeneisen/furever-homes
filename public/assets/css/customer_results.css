@@ -23,7 +23,6 @@ li {
     max-height: calc(300vh - 325px);
     overflow-y: auto;
     background: rgba(40, 57, 101, .5);
-
 }
 
 *,
@@ -99,3 +98,4 @@ a {
     color: white;
     background: rgba(40, 57, 101, .9);
 }
+
